@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<script>
+    
+   
+    function podsumowanie(){
+        var imie = document.getElementById('imie').value;
+        var nazwisko= document.getElementById('nazwisko').value;
+        var ulica = document.getElementById('ulica').value;
+        var nr = document.getElementById('nr').value;
+        var kod = document.getElementById('kod').value;
+        var miejscowosc = document.getElementById('miejscowosc').value;
+        var data = document.getElementById('data').value;
+        var godzina = document.getElementById('godzina').value;
+        var minuty = document.getElementById('minuty').value;
+      // var d=data.getDay()
+        godz=godzina.toString()
+        min=minuty.toString()
+        imiee=imie.toString()
+        nazwa=nazwisko.toString()
+        wynik=imiee.length+nazwisko.length
+        var noga =godz
+        var reka=min
+        if(minuty==0){
+            reka="0"+min
+        }
+        if(godzina<10){
+            noga="0"+godz
+        }
+        data2= data.toString()
+        dni=data2.substr(8, 9)
+        msc1=data2.substr(5,2);
+        
+        var klucz
+        klucz= dni+msc1+"_"+noga+reka+imie.substr(0,1)+nazwisko.substr(0,1)+String.fromCharCode(40+wynik)
+        var lekarz
+        var pokoj
+        if(godzina==10 && minuty==0 || godzina<10  ){
+             lekarz="Alojzy Tabsiński"
+             pokoj="5"
+        }
+        else if( godzina==12 && minuty==0 || godzina<12 ){
+             lekarz="Marcelina Bańkowska"
+             pokoj="13"
+        }
+        else if( godzina==14 && minuty==0 || godzina<14  ){
+             lekarz="Władimir Pikuś"
+             pokoj="8"
+        }
+        else{
+             lekarz="Constantin Searoup"
+             pokoj="11"
+        }
+        var objawy =""
+        if(wt.checked == true){
+            objawy+="wysoka temperatura, "
+        }
+        if(bk.checked == true){
+            objawy+="katar, "
+        }
+        if(g.checked == true){
+            objawy+="ból gardła, "
+        }
+        if(k.checked == true){
+            objawy+="kaszel, "
+        }
+        if(bg.checked == true){
+            objawy+="ból głowy, "
+        }
+        if(inne.checked == true){
+            objawy+= document.getElementById('text').value+", "
+        }
+        objawy=objawy.substr(0,objawy.length-2)
+        odpal = window.open();
+           // odpal.document.body.innerHTML =imie+ nazwisko+data2+" ccc  "+msc1+":"+dni+";"+noga+";"+reka+";;;;;;"+klucz+";;"+wynik+"------"+lekarz+pokoj
+      //  odpal.document.body.innerHTML = klucz.toUpperCase()
+        odpal.document.body.innerHTML +="<div><hr style='margin-left: 30%; margin-right: 30%; margin-top:3%'> <p style='text-align: right; text-transform: capitalize; margin-right: 30%; font-size:15px; font-weight: bold; font-style: italic;'>"+imie+"  "+nazwisko+"</p>"
+        odpal.document.body.innerHTML +="<p style='text-align: right; text-transform: capitalize; margin-right: 30%; font-size:15px; font-weight: bold; font-style: italic;'>Ul."+ulica+" "+nr+"</p>"
+        odpal.document.body.innerHTML +="<p style='text-align: right; text-transform: capitalize; margin-right: 30%; font-size:15px; font-weight: bold; font-style: italic;'>"+kod+" "+miejscowosc+"</p>"
+        odpal.document.body.innerHTML +="<p style='text-align: left;  margin-left: 30%; font-size:15px;  '><u>Kod potwierdzenia rejestracji:</u><b>"+" "+klucz+"</b></p>"
+        odpal.document.body.innerHTML +="<p style='text-align: left;  margin-left: 30%; font-size:15px;  '>Data wizyty:<b>"+" "+data+"</b></p>"
+        odpal.document.body.innerHTML +="<table style='border-collapse: collapse;  margin-left: 30%; font-size: 15px; text-align: left; width:30%;'><tr><td style='border: 1px solid black;'>godz: </td><td style='border: 1px solid black;'>lekarz: </td><td style='border: 1px solid black;'>nr pokoju</td></tr><tr><td style='border: 1px solid black;' >"+godzina+"</td><td style='border: 1px solid black;' >"+lekarz+"</td><td style='border: 1px solid black;' >"+pokoj+"</td></tr></table>"
+        odpal.document.body.innerHTML +="<p style='text-align: left;  margin-left: 30%; font-size:15px;  '>Zgłoszone objawy chorobowe: "+objawy+".</p>"
+        odpal.document.body.innerHTML +="<hr style='margin-left: 30%; margin-right: 30%; margin-top:3%'> <p style='text-align: right; text-transform: capitalize; margin-right: 30%; font-size:15px; font-weight: bold; font-style: italic;'></div>"
+    }
+    function suwak2()
+    {
+        var suwak = document.getElementById('minuty').value
+        document.getElementById('suwak').value=suwak
+        
+    }
+    function suwak3()
+    {
+        var suwak = document.getElementById('suwak').value
+        document.getElementById('minuty').value=suwak
+        
+    }
+    function pole(){
+        if(inne.checked == true){
+            document.getElementById('ppp').style.display="";
+            
+        }
+        if(inne.checked == false){
+            document.getElementById('ppp').style.display="none";
+        }
+    }
+    function load(){
+        document.getElementById('ppp').style.display="none";
+    }
+
+    function zabezp(){
+        var godzina = document.getElementById("godzina").value
+        var minuty=document.getElementById("minuty")
+        var suwak=document.getElementById("suwak")
+        if(godzina==16){
+            minuty.value="0"
+            suwak.value="0"
+            document.getElementById("minuty").disabled = true
+            document.getElementById("suwak").disabled = true
+        }
+        else {
+            document.getElementById("minuty").disabled = false
+            document.getElementById("suwak").disabled = false
+        }
+     }
+    function dataa(){
+            var el = document.getElementById('pole')
+            var dzis = new Date()
+            el.data.min = dzis.getFullYear() + '-' + ('0' + (dzis.getMonth() + 1)).slice(-2) + '-' + ('0' + dzis.getDate()).slice(-2);
+    }  
+    function zmianaa(){
+        document.getElementsByTagName("head")[0].innerHTML ="<meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Document</title><link rel='stylesheet' href='style2.css'>"
+        document.getElementsByTagName("header")[0].innerHTML="<header> <a href='#kotwica' ><div class='klik'>Scroll <-</div></a><div onclick='zmianaa2()' id='green'>Zielony<-</div>Rejestracja</header>"
+    }
+    function zmianaa2(){
+        document.getElementsByTagName("head")[0].innerHTML ="<meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Document</title><link rel='stylesheet' href='style.css'>"
+        document.getElementsByTagName("header")[0].innerHTML="<header> <a href='#kotwica' ><div class='klik'>Scroll <-</div></a><div onclick='zmianaa()' id='green'>Niebieski<-</div>Rejestracja</header>"
+    }
+ 
+</script>
+
+<body onload="load(),pole()">
+    <div id="TJW">
+        
+        <header> <a href='#kotwica' ><div class='klik'>Scroll <-</div></a><div onclick='zmianaa()' id='green'>Niebieski<-</div>Rejestracja</header>
+                
+      
+        <div id="TJF" >
+            
+            <form id="pole" onsubmit="podsumowanie()" >
+                
+                    <legend>Wprowadź dane</legend>
+                    <hr>
+                    <div id="inf">
+                    <label>Imię:</label><br>
+                    <input type="text" id="imie" required name="imie"   style="text-transform: capitalize;" pattern="^[A-ZŁŻ]*[a-złńęąćżźśó]+$"><br>
+                    <label>Nazwisko:</label><br>
+                    <input type="text" name="nazwisko" required  id="nazwisko"  style="text-transform: capitalize;" pattern="^[A-ZĄĆŚŁŻŃŹÓŚ]*[a-złąćółńżźś]+(-*[A-Z]*[a-z]*)*$" > <br>
+                    <label>Wiek:</label><br>
+                    <input type="number" id="wiek" required step="1"  min="0" max="150"><br>
+                    <label>Ulica:</label><br>
+                    
+                    <input type="text" name="ulica" required  id="ulica" pattern="^[a-złńęąćżźśó]+ *[a-złńęąćżźśó]*$" style="text-transform: capitalize;"><br>
+                    <label>Numer domu:</label><br>
+                    <input type="number" name="nr" required  id="nr" min="0" ><br>
+                    <label>Kod:</label><br>
+                    <input type="text" name="kod" required  id="kod"  placeholder="xx-xxx" pattern="^[0-9]{2}-[0-9]{3}$"><br>
+                    <label>Miejscowość:</label><br>
+                    <input type="text" name="miejscowosc" required  id="miejscowosc" style="text-transform: capitalize;" pattern="^[a-złńęąćżźśó]+ *[a-złńęąćżźśó]*$" ><br>
+                    <label>E-mail:</label><br>
+                    <input type="email" required  id="email"><br>
+                </div><div id="inf2">
+                    
+                    <label>Numer telefonu:</label><br>
+                    <input type="tel" id="tel" required  placeholder="xxx-xxx-xxx" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}"><br>
+                    Preferowana godzina:<br>
+                    <input type="number" id="godzina" max="16" min="8" value="8" onchange="zabezp()"> :
+                    <input type="number" id="minuty" max="59" step="15" min="0" value="0" oninput="suwak2()"><br>
+                    <input type="range" id="suwak" class="slider" name="suwak" step="15" min="0" max="59" value="0"  oninput="suwak3()"><br><br>
+                    <label>ubezpieczenie:</label> 
+                    <select name="rodzaj" >
+                        <option value="1" id="wybor"> NFZ</option>
+                        <option value="2" id="wybor"> brak</option>
+                    </select><br><br>
+                    <label>Preferowana data wizyty:</label><br>
+                    <input type="date" name="data" id="data" required  onfocus="dataa()" ><br>
+                    <label>Zaobserwowane objawy:</label><br><br>
+                
+                    <label class="kontener">wysoka temperatura
+                        
+                        <input type="checkbox" id="wt" checked="checked">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="kontener">katar
+                        <input type="checkbox" id="bk">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="kontener" >ból gardła
+                        <input type="checkbox" id="g">
+                        <span class="checkmark"></span>
+                      </label>
+                     
+                      <label class="kontener">kaszel
+                        <input type="checkbox"id="k">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="kontener">ból głowy
+                        <input type="checkbox" id="bg">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="kontener">inne
+                        <input type="checkbox" id="inne"  onchange="pole()">
+                        <span class="checkmark"></span>
+                      </label>
+                     
+                    <div id='ppp'>
+                        <textarea id="text"  placeholder="Wpisz objawy" ></textarea>
+                    </div></div>
+                    <div class="button">
+                    <br> <input type="submit"  value="Wyślij" > <br>
+                </div>
+                
+            </form>
+        </div>
+        
+    </div>
+    <a name="kotwica"><footer >Piotr Kowalczyk 3F 2020</footer></a>
+</body>
+</html>
