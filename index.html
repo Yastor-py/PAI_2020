@@ -40,7 +40,7 @@
         msc1=data2.substr(5,2);
         
         var klucz
-        klucz= dni+msc1+"_"+noga+reka+imie.substr(0,1)+nazwisko.substr(0,1)+String.fromCharCode(40+wynik)
+        klucz= dni+msc1+"_"+noga+reka+"_"+imie.substr(0,1)+nazwisko.substr(0,1)+String.fromCharCode(40+wynik)
         var lekarz
         var pokoj
         if(godzina==10 && minuty==0 || godzina<10  ){
@@ -87,7 +87,7 @@
         odpal.document.body.innerHTML +="<p style='text-align: right; text-transform: capitalize; margin-right: 30%; font-size:15px; font-weight: bold; font-style: italic;'>"+kod+" "+miejscowosc+"</p>"
         odpal.document.body.innerHTML +="<p style='text-align: left;  margin-left: 30%; font-size:15px;  '><u>Kod potwierdzenia rejestracji:</u><b>"+" "+klucz+"</b></p>"
         odpal.document.body.innerHTML +="<p style='text-align: left;  margin-left: 30%; font-size:15px;  '>Data wizyty:<b>"+" "+data+"</b></p>"
-        odpal.document.body.innerHTML +="<table style='border-collapse: collapse;  margin-left: 30%; font-size: 15px; text-align: left; width:30%;'><tr><td style='border: 1px solid black;'>godz: </td><td style='border: 1px solid black;'>lekarz: </td><td style='border: 1px solid black;'>nr pokoju</td></tr><tr><td style='border: 1px solid black;' >"+godzina+"</td><td style='border: 1px solid black;' >"+lekarz+"</td><td style='border: 1px solid black;' >"+pokoj+"</td></tr></table>"
+        odpal.document.body.innerHTML +="<table style='border-collapse: collapse;  margin-left: 30%; font-size: 15px; text-align: left; width:30%;'><tr><td style='border: 1px solid black;'>godz: </td><td style='border: 1px solid black;'>lekarz: </td><td style='border: 1px solid black;'>nr pokoju</td></tr><tr><td style='border: 1px solid black;' >"+godzina+":"+reka+"</td><td style='border: 1px solid black;' >"+lekarz+"</td><td style='border: 1px solid black;' >"+pokoj+"</td></tr></table>"
         odpal.document.body.innerHTML +="<p style='text-align: left;  margin-left: 30%; font-size:15px;  '>Zgłoszone objawy chorobowe: "+objawy+".</p>"
         odpal.document.body.innerHTML +="<hr style='margin-left: 30%; margin-right: 30%; margin-top:3%'> <p style='text-align: right; text-transform: capitalize; margin-right: 30%; font-size:15px; font-weight: bold; font-style: italic;'></div>"
     }
@@ -168,13 +168,13 @@
                     <input type="number" id="wiek" required step="1"  min="0" max="150"><br>
                     <label>Ulica:</label><br>
                     
-                    <input type="text" name="ulica" required  id="ulica" pattern="^[a-złńęąćżźśó]+ *[a-złńęąćżźśó]*$" style="text-transform: capitalize;"><br>
+                    <input type="text" name="ulica" required  id="ulica" pattern="^[A-ZĄĆŚŁŻŃŹÓŚ]?[a-złńęąćżźśó]+ *[a-złńęąćżźśó]*$" style="text-transform: capitalize;"><br>
                     <label>Numer domu:</label><br>
                     <input type="number" name="nr" required  id="nr" min="0" ><br>
                     <label>Kod:</label><br>
                     <input type="text" name="kod" required  id="kod"  placeholder="xx-xxx" pattern="^[0-9]{2}-[0-9]{3}$"><br>
                     <label>Miejscowość:</label><br>
-                    <input type="text" name="miejscowosc" required  id="miejscowosc" style="text-transform: capitalize;" pattern="^[a-złńęąćżźśó]+ *[a-złńęąćżźśó]*$" ><br>
+                    <input type="text" name="miejscowosc" required  id="miejscowosc" style="text-transform: capitalize;" pattern="^[A-ZĄĆŚŁŻŃŹÓŚ]?[a-złńęąćżźśó]+ *[a-złńęąćżźśó]*$" ><br>
                     <label>E-mail:</label><br>
                     <input type="email" required  id="email"><br>
                 </div><div id="inf2">
