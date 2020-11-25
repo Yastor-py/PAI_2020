@@ -7,6 +7,9 @@
     <script src="sj.js"></script>
 </head>
 <style>
+    body{
+        background-color: black;
+    }
 .full{
     position: absolute;
     top: 0;
@@ -25,6 +28,19 @@
     height: 200%;
     overflow: hidden;
     z-index: -100;
+    filter:opacity(60%);
+    
+    
+}
+.black{
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    overflow: hidden;
+    z-index: -100;
+    position:static;
+    background-color: black;
 }
 
 .off{
@@ -87,16 +103,20 @@ h1{
 .s{
     transform: translateY(-30%)
 }
+.black{
+    background-color: black;
+}
 
 </style>
 
-<body>
+<body><div class="black">
     <div id="full" onclick="play2()" >
     <video  muted  autoplay loop id="vid"   oncanplay="this.muted=true" class="full">
 
         <source src="xyz.mp4" type="video/mp4">
     </video>
     </div>
+</div>
     <div id='bnt'   onclick="play()" class="off" > </div>
     <div id="content"><br>
 <pre id="na">
@@ -144,6 +164,7 @@ h1{
         </pre>
 
     </div>
+
 </body>
 </html>
 
