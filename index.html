@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EE.09</title>
+    <script src="sj.js"></script>
+</head>
+<style>
+.full{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    min-width: 50%;
+    min-height: 50%;
+}
+#full{
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    overflow: hidden;
+    z-index: -100;
+}
+
+.off{
+    cursor: pointer;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    background-image: url('mute.png');
+    background-size: cover;
+    opacity: 0.5;
+  
+}
+.co{
+    font-size: 32px;
+    left: 50%;
+    position: absolute;
+    top: 40%;
+    transform: translateX(-50%) translateY(-50%);
+    white-space: pre;
+    color: #fff;
+    opacity: .7;
+}
+.links{
+    font-size: 22px;
+    left: 50%;
+    position: absolute;
+    top: 60%;
+    transform: translateX(-50%) translateY(-50%);
+    white-space: pre;
+    color: #fff;
+    opacity: .7;
+
+}
+a{
+    font-size: 22px;
+    
+    
+    transform: translateX(-50%) translateY(-50%);
+    white-space: pre;
+    color: #fff;
+    
+
+}
+
+
+</style>
+
+<body>
+    <div id="full" onclick="play2()" >
+    <video  muted  autoplay loop id="vid"   oncanplay="this.muted=true" class="full">
+
+        <source src="xyz.mp4" type="video/mp4">
+    </video>
+    </div>
+    <div id='bnt'   onclick="play()" class="off" > </div>
+    <div id="content">
+
+        <pre class="co">
+            
+   _____    _                                   _ 
+  |  __ \  (_)                                 | |
+  | |  | |  _   ___    ___    ___    _ __    __| |
+  | |  | | | | / __|  / __|  / _ \  | '__|  / _` |
+  | |__| | | | \__ \ | (__  | (_) | | |    | (_| |
+  |_____/  |_| |___/  \___|  \___/  |_|     \____|
+                                                  
+                                                  
+ 
+        </pre>
+        <pre class="links"><a href="https://discord.gg/RJMZQEC" target="_blank">https://discord.gg/RJMZQEC</a>
+        
+        <center>© 2020, Some Rights Reserved.   </center>
+        
+        </pre>
+
+    </div>
+</body>
+</html>
+
+
+
+
