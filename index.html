@@ -70,7 +70,7 @@ img {
     font-size: 22px;
     left: 50%;
     position: absolute;
-    top: 65%;
+    top: 70%;
     transform: translateX(-50%) translateY(-50%);
     white-space: pre;
     color: #fff;
@@ -84,6 +84,7 @@ img {
     white-space: pre;
     color: #fff;
     opacity: .7;
+    bottom: 65%;
 }
 a{
     font-size: 22px;
@@ -111,6 +112,7 @@ h1{
 }
 .lh{
     font-weight: bolder;
+    top: 65%;
 }
 .ee:link {
     text-decoration: none;
@@ -122,9 +124,9 @@ h1{
     <div id="full" onclick="play2()" >
     <video  muted  autoplay loop id="vid" poster="placeholder.jpg"  oncanplay="this.muted=true" class="full">
 
-        <source src="aaa.mp4" type="video/mp4">
+        <source src="bbb.mp4" type="video/mp4">
     </video>
-    <audio id="audio" loop autoplay  >
+    <audio id="audio" loop autoplay muted >
 
         <source src="music.mp3" type="audio/mpeg">
 
