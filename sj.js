@@ -20,4 +20,4 @@ function play2(){
     
     
 }
-window.onload=document.getElementById('audio').play();
+
