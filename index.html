@@ -50,9 +50,12 @@
     position: absolute;
     background-image: url('mute.png');
     background-size: cover;
-    opacity: 0.5;
+    opacity: 0.3;
   
 }
+img {
+    opacity: 0.5;
+  }
 .co{
     font-size: 32px;
     left: 50%;
@@ -107,7 +110,7 @@ h1{
     background-color: black;
 }
 .lh{
-    font-weight: 900;
+    font-weight: bolder;
 }
 .ee:link {
     text-decoration: none;
@@ -119,8 +122,13 @@ h1{
     <div id="full" onclick="play2()" >
     <video  muted  autoplay loop id="vid"   oncanplay="this.muted=true" class="full">
 
-        <source src="xyz.mp4" type="video/mp4">
+        <source src="bbb.mp4" type="video/mp4">
     </video>
+    <audio id="audio" loop autoplay  >
+
+        <source src="music.mp3" type="audio/mpeg">
+
+    </audio>
     </div>
 </div>
     <div id='bnt'   onclick="play()" class="off" > </div>
