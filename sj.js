@@ -8,8 +8,9 @@ function play(){
     }
     else{
         document.getElementById('bnt').style='background-image: url("mute.png");'
-        document.getElementById("audio").muted=true
         document.getElementById("audio").pause()
+        document.getElementById("audio").muted=true
+        
     }
     
 }
@@ -21,4 +22,3 @@ function play2(){
     
     
 }
-
